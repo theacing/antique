@@ -1,0 +1,139 @@
+//FUNCTIONALITY
+
+.card{
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+
+  &__side{
+    transition: all .8s;
+    height: 52rem;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: .3rem;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($black, .15);
+
+    &--front{
+      background-color: $white;
+    }
+    &--back{
+      transform: rotateY(180deg);
+
+      &-1{
+        background-image: linear-gradient(to right bottom, $pink-light, $pink-dark);
+      }
+      &-2{
+        background-image: linear-gradient(to right bottom, $secondaryColor, $firstColor);
+      }
+      &-3{
+        background-image: linear-gradient(to right bottom, $grey-light, $grey-dark);
+      }
+    }
+  }
+
+  &:hover &__side--front{
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back{
+    transform: rotateY(0);
+  }
+
+  //FRONT STYLING
+  
+  &__picture{
+    height: 23rem;
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    background-blend-mode: color;
+
+    &--1{
+      background-image: linear-gradient(to right bottom, $pink-light, $pink-dark), url(../img/greek3.jpg);
+    }
+    &--2{
+      background-image: linear-gradient(to right bottom, $secondaryColor, $firstColor), url($img-greek2-path);
+    }
+    &--3{
+      background-image: linear-gradient(to right bottom, $grey-light, $grey-dark), url($img-greek9-path);
+    }
+  }
+
+  &__heading{
+    position: absolute;
+    top: 13rem;
+    right: 1rem;
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $white;
+    text-align: right;
+  }
+
+  &__heading-span{
+      padding: 1rem 1.5rem;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+
+      &--1{
+        background-image: linear-gradient(to right bottom, rgba($pink-light, .8), rgba($pink-dark, .8));
+      }
+      &--2{
+        background-image: linear-gradient(to right bottom, rgba($secondaryColor, .8), rgba($firstColor, .8));
+      }
+      &--3{
+        background-image: linear-gradient(to right bottom, rgba($grey-light, .8), rgba($grey-dark, .8));
+      }
+  }
+
+  &__details{
+    padding: 3rem;
+
+    ul{
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li{
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.5rem;
+        &:not(:last-child){
+          border-bottom: .1rem solid $border-grey;
+        }
+      }
+    }
+  }
+
+  //BACK STYLING
+
+  &__cta{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box{
+    color: $white;
+  }
+
+  &__price-only{
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__price-value{
+    font-size: 6rem;
+    font-weight: 100;
+  }
+
+}

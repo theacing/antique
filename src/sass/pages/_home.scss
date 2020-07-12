@@ -1,0 +1,28 @@
+.section-about{
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
+
+.section-features{
+  margin-top: -20vh;
+  padding: 20rem 0;
+  background-image: linear-gradient(to left top, $firstColor, $secondaryColor), url($img-greek4-path);
+  background-size: cover;
+
+  transform: skewY(-7deg);
+  & > *{
+    transform: skewY(7deg);
+  }
+}
+
+.section-tours{
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 15rem 0;
+  margin-top: -10vh;
+}
+
+.section-stories{
+  position: relative;
+  padding: 15rem 0;
+}
