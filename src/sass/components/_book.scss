@@ -1,6 +1,7 @@
 .book{
-  background-image: linear-gradient(105deg, rgba($white, .9) 0%, rgba($white, .9) 50%, rgba($firstColor, .9) 50%, rgba($secondaryColor, .9) 100%), url("../img/greek4.jpg");
+  background-image: linear-gradient(105deg, rgba($white, .9) 0%, rgba($white, .9) 50%, rgba($firstColor, .9) 50%, rgba($secondaryColor, .9) 100%), url("../img/greek8.jpg");
   background-size: cover;
+  background-position: top;
   border-radius: .3rem;
 
   &__form{
