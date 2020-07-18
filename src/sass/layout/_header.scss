@@ -1,6 +1,6 @@
 .header{
   height: 95vh;
-  background-image: linear-gradient(to left top, $firstColor, $secondaryColor), url($img-greek8-path);
+  background-image: linear-gradient(to left top, rgba($firstColor, .8), rgba($secondaryColor, .8)), url($img-greek8-path);
   background-size: cover;
   background-position: top;
   position: relative;
