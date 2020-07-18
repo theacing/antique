@@ -12,6 +12,35 @@
     top: 6rem;
     right: 6rem;
     z-index: 2000;
+    text-align: center;
+
+    box-shadow: 0 1rem 3rem rgba($black, .1);
+  }
+  &__icon{
+    position: relative;
+    margin-top: 3.5rem;
+    &,
+    &::before,
+    &::after{
+      height: .2rem;
+      width: 3rem;
+      display: inline-block;
+      background-color: $grey-dark-1;
+    }
+    &::before,
+    &::after{
+      content: "";
+      position: absolute;
+      left: 0;
+
+      transition: all .2s;
+    }
+    &::before{
+      top: -.8rem;
+    }
+    &::after{
+      top: .8rem;
+    }
   }
   &__bg{
     background-image: radial-gradient($secondaryColor, $firstColor);
@@ -71,10 +100,32 @@
     }
   }
 
+  //NAV OPENING
   &__checkbox:checked ~ &__bg{
     transform: scale(80);
   }
   &__checkbox:checked ~ &__nav{
     right: 0;
+  }
+
+  //ICON HOVER EFFECT
+  &__btn:hover &__icon::before{
+    top: -1rem;
+  }
+  &__btn:hover &__icon::after{
+    top: 1rem;
+  }
+
+  //ICON ACTIVE EFFECT
+  &__checkbox:checked ~ &__btn &__icon{
+    background-color: transparent;
+  }
+  &__checkbox:checked ~ &__btn &__icon::before{
+    top: 0;
+    transform: rotate(135deg);
+  }
+  &__checkbox:checked ~ &__btn &__icon::after{
+    top: 0;
+    transform: rotate(-135deg);
   }
 }
