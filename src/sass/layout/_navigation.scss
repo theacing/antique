@@ -15,6 +15,11 @@
     text-align: center;
 
     box-shadow: 0 1rem 3rem rgba($black, .1);
+
+    @include adaptive(tab-port){
+      top: 4rem;
+      right: 4rem;
+    }
   }
   &__icon{
     position: relative;
@@ -53,6 +58,11 @@
     border-radius: 50%;
 
     transition: all 1s;
+
+    @include adaptive(tab-port){
+      top: 4.5rem;
+      right: 4.5rem;
+    }
   }
   &__nav{
     height: 100%;
@@ -72,6 +82,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
+    @include adaptive(tab-port){
+      width: 100%;
+    }
 
     &-item{
       margin: 1rem;

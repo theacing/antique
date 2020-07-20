@@ -13,7 +13,7 @@
   transition: all .3s;
 
   &__content{
-    width: 75%;
+    width: 85%;
     display: table;
     background-color: $white;
     position: absolute;
@@ -27,21 +27,42 @@
     transform: translate(-50%, -50%) scale(.25);
 
     transition: all .4s .2s;
+
+    @include adaptive(tab-land){
+      width: 90%;
+    }
+
   }
   &__left{
+    position: relative;
     display: table-cell;
     width: 33.33%;
+
+    @include adaptive(tab-land){
+      overflow: hidden;
+    }
+    @include adaptive(tab-port){
+      display: none;
+    }
   }
   &__right{
     display: table-cell;
     width: 66.66%;
     vertical-align: middle;
     padding: 2rem 5rem;
+
+    @include adaptive(tab-port){
+      padding: 5rem;
+    }
   }
   &__img{
     display: block;
-    height: 22rem;
     width: 100%;
+
+    @include adaptive(tab-land){
+      width: 40rem;
+      height: 26rem;
+    }
   }
   &__text{
     font-size: 1.4rem;
@@ -59,6 +80,12 @@
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto;
+
+    @include adaptive(tab-land){
+      column-count: 1;
+      column-rule: none;
+      margin-bottom: 2rem;
+    }
   }
   &__close{
     &:link,

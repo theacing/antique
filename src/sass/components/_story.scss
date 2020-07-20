@@ -8,8 +8,20 @@
   padding: 6rem;
   transform: skewX(-12deg);
 
+  @include adaptive(tab-port){
+    width: 100%;
+  }
+  @include adaptive(phone){
+    width: 100%;
+    transform: skewX(0);
+  }
+
   & > *{
     transform: skewX(12deg);
+
+    @include adaptive(phone){
+      transform: skewX(0);
+    }
   }
 
   &__circle{
@@ -21,6 +33,14 @@
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     margin-right: 4rem;
+
+    @include adaptive(tab-port){
+      left: -1.5rem;
+      margin: 0 5rem 1rem 0;
+    }
+    @include adaptive(phone){
+      left: 0;
+    }
   }
 
   &__img{

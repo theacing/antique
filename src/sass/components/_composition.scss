@@ -1,5 +1,10 @@
 .composition{
   position: relative;
+
+  @include adaptive(tab-port){
+    margin-top: 3rem;
+  }
+
   &__photo{
     width: 55%;
     box-shadow: 0 1.5rem 4rem rgba($black, .4);
@@ -8,19 +13,43 @@
     transition: all .2s;
     z-index: 10;
     outline-offset: 2rem;
+
+    @include adaptive(tab-port){
+      float: left;
+      width: 33.33%;
+      position: relative;
+      box-shadow: 0 1.5rem 3rem rgba($black, .2);
+    }
+
     &--p1{
       left: 0;
       top: -2rem;
+
+      @include adaptive(tab-port){
+        top: 0;
+        left: 0;
+      }
     }
 
     &--p2{
-      left: 23rem;
+      left: 20rem;
       top: 1rem;
+
+      @include adaptive(tab-port){
+        top: -2rem;
+        left: 0;
+        transform: scale(1.1);
+      }
     }
 
     &--p3{
       left: 20%;
       top: 13rem;
+
+      @include adaptive(tab-port){
+        top: 1rem;
+        left: 0;
+      }
     }
     &:hover{
       outline: 1.5rem solid $firstColor;
