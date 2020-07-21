@@ -16,5 +16,10 @@
       width: 90%;
       padding: 3rem;
     }
+    @include adaptive(phone){
+      padding: 2rem;
+      width: 100%;
+      font-size: 1rem;
+    }
   }
 }

@@ -4,7 +4,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba($black, .9);
+  background-color: rgba($black, .4);
+  backdrop-filter: blur(2rem);
   z-index: 4000;
 
   opacity: 0;
@@ -34,23 +35,24 @@
 
   }
   &__left{
-    position: relative;
     display: table-cell;
     width: 33.33%;
 
     @include adaptive(tab-land){
-      overflow: hidden;
-    }
-    @include adaptive(tab-port){
-      display: none;
+      width: 100%;
+      display: table-row;
     }
   }
   &__right{
     display: table-cell;
     width: 66.66%;
     vertical-align: middle;
-    padding: 2rem 5rem;
+    padding: 3rem;
 
+    @include adaptive(tab-land){
+      display: block;
+      width: 100%;
+    }
     @include adaptive(tab-port){
       padding: 5rem;
     }
@@ -58,10 +60,25 @@
   &__img{
     display: block;
     width: 100%;
+    height: 25rem;
 
     @include adaptive(tab-land){
-      width: 40rem;
-      height: 26rem;
+      width: 50%;
+      float: left;
+      height: 30vh;
+    }
+    @include adaptive(tab-port){
+      float: none;
+      height: 35rem;
+      width: 100%;
+    }
+    @include adaptive(phone){
+      height: 25rem;
+    }
+    &--2{
+      @include adaptive(tab-port){
+        display: none;
+      }
     }
   }
   &__text{
@@ -81,10 +98,10 @@
     -moz-hyphens: auto;
     hyphens: auto;
 
-    @include adaptive(tab-land){
-      column-count: 1;
-      column-rule: none;
-      margin-bottom: 2rem;
+    @include adaptive(tab-port){
+        column-count: 1;
+        column-rule: none;
+        margin-bottom: 2rem;
     }
   }
   &__close{
